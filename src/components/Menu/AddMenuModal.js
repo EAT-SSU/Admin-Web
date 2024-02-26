@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useRef, useEffect } from 'react';
 import { Button, Modal, TextField, DialogActions, Dialog, DialogTitle } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
@@ -21,15 +21,12 @@ function AddMenuModal({ open, handleClose, handleAddMenu }) {
         margin: '0 0.5rem',
     });
 
-    const SelectTextField = styled(TextField)({
-        width: '100%',
-    });
     return (
         <Modal open={open} onClose={handleClose}>
             <div className='modalContainer'>
                 <div className='modalTitle'>메뉴 추가</div>
                 <div className='addMenuContainer'>
-                    <SelectTextField
+                    <TextField
                         label="카테고리"
                         placeholder='카테고리를 입력해주세요(예: 분식, 라면, 세트메뉴 등)'
                         variant="outlined"
@@ -37,7 +34,7 @@ function AddMenuModal({ open, handleClose, handleAddMenu }) {
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
                     />
-                    <SelectTextField
+                    <TextField
                         label="메뉴명"
                         placeholder='메뉴명을 입력해주세요'
                         variant="outlined"
@@ -45,7 +42,7 @@ function AddMenuModal({ open, handleClose, handleAddMenu }) {
                         value={menuName}
                         onChange={(e) => setMenuName(e.target.value)}
                     />
-                    <SelectTextField
+                    <TextField
                         label="가격"
                         placeholder='가격을 입력해주세요'
                         variant="outlined"
@@ -58,7 +55,7 @@ function AddMenuModal({ open, handleClose, handleAddMenu }) {
                     <SelectButton variant="outlined" onClick={handleClose} color="inherit">
                         취소하기
                     </SelectButton>
-                    <SelectButton variant="outlined" onClick={handleSubmit} color="primary" autoFocus>
+                    <SelectButton variant="outlined" onClick={handleSubmit} color="primary">
                         추가하기
                     </SelectButton>
                 </DialogActions>

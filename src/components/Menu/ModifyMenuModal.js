@@ -20,15 +20,12 @@ function ModifyMenuModal({ open, menuInfo, handleConfirm, handleCancel }) {
         margin: '0 0.5rem',
     });
 
-    const SelectTextField = styled(TextField)({
-        width: '100%',
-    });
     return (
         <Modal open={open} onClose={handleCancel}>
             <div className='modalContainer'>
                 <div className='modalTitle'>메뉴 수정</div>
                 <div className='addMenuContainer'>
-                    <SelectTextField
+                    <TextField
                         label="메뉴 이름"
                         placeholder='메뉴명을 입력해주세요'
                         variant="outlined"
@@ -36,7 +33,7 @@ function ModifyMenuModal({ open, menuInfo, handleConfirm, handleCancel }) {
                         value={menuName}
                         onChange={(e) => setMenuName(e.target.value)}
                     />
-                    <SelectTextField
+                    <TextField
                         label="가격"
                         placeholder='가격을 입력해주세요'
                         variant="outlined"
@@ -49,7 +46,7 @@ function ModifyMenuModal({ open, menuInfo, handleConfirm, handleCancel }) {
                     <SelectButton variant="outlined" onClick={handleCancel} color="inherit">
                         취소하기
                     </SelectButton>
-                    <SelectButton variant="outlined" onClick={handleSubmit} color="primary" autoFocus>
+                    <SelectButton variant="outlined" onClick={handleSubmit} color="primary">
                         추가하기
                     </SelectButton>
                 </DialogActions>
