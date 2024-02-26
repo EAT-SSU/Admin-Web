@@ -45,10 +45,11 @@ function FixMenu() {
         try {
             console.log("modifyFixMenu");
             console.log(menuId, menuName, menuPrice);
-            // await sendAuthorizedHttpRequest('post', `/meals?date=${formatedDate}&timePart=${timePart.toUpperCase()}&restaurant=${convertRestaurantToEnum(restaurantName)}`, {
-            //     menuNames:menuNames,
-            // });
-            // await fetchMealsData();
+            await sendAuthorizedHttpRequest('patch', `/menu/fix-menus/${menuId}`, {
+                name:menuName,
+                price:menuPrice,
+            });
+            await fetchFixMenusData();
         } catch (error) {
             console.error('Error adding menu:', error);
         }

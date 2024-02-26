@@ -47,10 +47,10 @@ function ModifyMenuModal({ open, menuInfo, handleConfirm, handleCancel }) {
                         취소하기
                     </SelectButton>
                     <SelectButton variant="outlined" onClick={handleSubmit} color="primary">
-                        추가하기
+                        수정하기
                     </SelectButton>
                 </DialogActions>
-            </div>
+            </div>                                                                                
         </Modal>
 
     );
