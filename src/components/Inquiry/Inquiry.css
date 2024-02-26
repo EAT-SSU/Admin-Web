@@ -1,0 +1,30 @@
+.tableContainer{
+    margin-top: 3rem;
+}
+
+.MuiTableContainer-root{
+    box-shadow: none;
+}
+
+.limitedText{
+    max-width: 10rem;
+    text-align: center;
+}
+
+.limitedText>*{
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 auto;
+}
+
+.buttonText {
+
+    transition: color 0.3s, background-color 0.3s; 
+}
+
+.buttonText:hover {
+    cursor: pointer;
+    background-color: #f8f9fa; 
+}
