@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import Meal from "./Meal/Meal";
 import FixMenu from "./FixMenu/FixMenu";
-import DateNavigator from "./DateNavigator";
 import MenuTypeRadio from "./MenuTypeRadio";
-import TimePartSelector from "./TimePartSelector";
+
 import "./Menu.css";
+import WeeklyNavigator from "./WeekNavigaotr";
+import Restaurant from "./Restaurant";
+import RestaurantPartSelector from "./RestaurantPartSelector";
+import WeeklyMeal from "./Meal/WeeklyMeal";
 
 function WeeklyMenu() {
   const [selectedMenuType, setSelectedMenuType] = useState("meal");
@@ -21,17 +24,22 @@ function WeeklyMenu() {
         return <Meal />;
     }
   };
+
   return (
     <div className="rootWrapper">
-      <DateNavigator
+      <WeeklyNavigator
         selectedDate={selectedDate}
         setSelectedDate={setSelectedDate}
         hidden={selectedMenuType === "fix-menu"}
       />
-      <MenuTypeRadio
-        selectedMenuType={selectedMenuType}
-        setselectedMenuType={setSelectedMenuType}
-      />
+
+      <RestaurantPartSelector
+        selectedTimePart={selectedTimePart}
+        setSelectedTimePart={setSelectedTimePart}
+        hidden={selectedMenuType === "fix-menu"}
+      >
+        <WeeklyMeal date={selectedDate} timePart={selectedTimePart} />
+      </RestaurantPartSelector>
     </div>
   );
 }
