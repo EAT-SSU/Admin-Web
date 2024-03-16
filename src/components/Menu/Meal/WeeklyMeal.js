@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { sendAuthorizedHttpRequest } from "api/api";
 import "../Menu.css";
 import Restaurant from "../Restaurant";
+import WeekRestaurant from "../WeekRestaurant";
 
 const formatDate = (date) => {
   const year = date.getFullYear();
@@ -38,6 +39,7 @@ function WeeklyMeal({ date, timePart }) {
         "get",
         `/meals?date=${formatedDate}&timePart=${timePart.toUpperCase()}`
       );
+      console.log(response);
       setMenuBoardDatas(response.result.menuBoards);
       setIsLoading(false);
     } catch (error) {
@@ -76,16 +78,12 @@ function WeeklyMeal({ date, timePart }) {
     <div className="menuBoardsContainer">
       {isLoading
         ? [
-            <Restaurant isLoading={isLoading} />,
-            <Restaurant isLoading={isLoading} />,
-            <Restaurant isLoading={isLoading} />,
-            <Restaurant isLoading={isLoading} />,
-            <Restaurant isLoading={isLoading} />,
-            <Restaurant isLoading={isLoading} />,
-            <Restaurant isLoading={isLoading} />,
+            <WeekRestaurant isLoading={isLoading} />,
+            <WeekRestaurant isLoading={isLoading} />,
+            <WeekRestaurant isLoading={isLoading} />,
           ]
         : menuBoardDatas.map((menuBoardData) => (
-            <Restaurant
+            <WeekRestaurant
               menuType={"meal"}
               isLoading={isLoading}
               boardData={menuBoardData}

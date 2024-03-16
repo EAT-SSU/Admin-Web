@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import { Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import TimePartSelector from "./TimePartSelector";
+import WeeklyMeal from "./Meal/WeeklyMeal";
 
 const items = [
   { label: "기숙사식당", value: "dorm" },
@@ -20,7 +21,7 @@ function RestaurantPartSelector({
   };
   const [selectedMenuType, setSelectedMenuType] = useState("meal");
   const [selectedRestaurant, setSelectedRestaurant] = useState(null); // 추가된 코드
-
+  const [selectedDate, setSelectedDate] = useState(new Date());
   const MenuButton = styled(Button)({
     margin: "0 4rem",
     padding: "0.4rem 1rem",
@@ -49,11 +50,15 @@ function RestaurantPartSelector({
 
       {/* 추가된 코드: 선택된 식당이 있을 때만 TimePartSelector를 렌더링합니다. */}
       {selectedRestaurant && (
-        <TimePartSelector
-          selectedTimePart={selectedTimePart}
-          setSelectedTimePart={setSelectedTimePart}
-          hidden={selectedMenuType === "fix-menu"}
-        />
+        <>
+          {" "}
+          <TimePartSelector
+            selectedTimePart={selectedTimePart}
+            setSelectedTimePart={setSelectedTimePart}
+            hidden={selectedMenuType === "fix-menu"}
+          />
+          <WeeklyMeal date={selectedDate} timePart={selectedTimePart} />;
+        </>
       )}
     </>
   );
