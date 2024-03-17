@@ -1,9 +1,9 @@
+// DateNavigator.js
 import React, { useState } from "react";
-import Calendar from "react-calendar";
+import CalendarModal from "./Modal/CalendarModal";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import "./Menu.css";
-import "react-calendar/dist/Calendar.css";
 
 function DateNavigator({ selectedDate, setSelectedDate, hidden }) {
   const [calendarVisible, setCalendarVisible] = useState(false);
@@ -30,35 +30,29 @@ function DateNavigator({ selectedDate, setSelectedDate, hidden }) {
     return `${year}.${month}.${day}`;
   };
 
-  // 달력 모달 표시 상태 토글
-  const handleDateClick = () => {
-    setCalendarVisible(!calendarVisible);
-  };
-
-  // 새로운 날짜 선택 시 상태 업데이트
-  const handleCalendarChange = (date) => {
-    setSelectedDate(date);
-    setCalendarVisible(false); // 달력 모달 숨기기
-  };
-
   return (
     <div className={`dateNavigatorContainer ${hidden ? "hidden" : ""}`}>
       <ArrowBackIosNewRoundedIcon
         onClick={handlePrevDate}
         className="navigatorArrow"
       />
-      <span className="dateText" onClick={handleDateClick}>
+      <span className="dateText" onClick={() => setCalendarVisible(true)}>
         {formatDate(selectedDate)}
       </span>
       <ArrowForwardIosRoundedIcon
         onClick={handleNextDate}
         className="navigatorArrow"
       />
-      {calendarVisible && (
-        <div className="calendarModal">
-          <Calendar onChange={handleCalendarChange} value={selectedDate} />
-        </div>
-      )}
+
+      <CalendarModal
+        visible={calendarVisible}
+        onClose={() => setCalendarVisible(false)}
+        selectedDate={selectedDate}
+        onDateChange={(date) => {
+          setSelectedDate(date);
+          setCalendarVisible(false); // 모달을 닫고 날짜를 업데이트
+        }}
+      />
     </div>
   );
 }
