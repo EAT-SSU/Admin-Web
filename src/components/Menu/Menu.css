@@ -1,163 +1,163 @@
 .rootWrapper {
-    min-width: 100%;
-    min-height: 100%;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .dateNavigatorContainer {
-    width: 100%;
-    height: 2.5rem;
-    margin-top: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 2.5rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dateText {
-    font-size: 2rem;
-    font-weight: 500;
-    margin: 0 1rem 0.3rem 1rem;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0 1rem 0.3rem 1rem;
+  cursor: pointer;
 }
 
 .navigatorArrow {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .menuTypeRadioContainer {
-    box-sizing: border-box;
-    width: 100%;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 3rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 3rem;
 }
 
 .timePartSelectorContainer {
-    box-sizing: border-box;
-    width: 100%;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 3rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3rem;
 }
 
-
 .menuBoardsContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
 }
 
 .restaurantBoardContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 25rem;
-    height: 100%;
-    margin: 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25rem;
+  height: 100%;
+  margin: 0.5rem 0.5rem;
 }
 
 .restaurantName {
-    font-size: 1rem;
-    font-weight: 800;
-    line-height: 0;
-    text-align: center;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 0;
+  text-align: center;
 }
 
 .addButtonConatiner {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-bottom: 0.2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 0.2rem;
 }
 
 .boardContainer {
-    box-sizing: border-box;
-    width: 100%;
-    height: 22rem;
-    border: 2px solid var(--primary-primary-light, #DF5757);
-    border-radius: 1rem;
-    padding: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 22rem;
+  border: 2px solid var(--primary-primary-light, #df5757);
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
 .listStickyHeader {
-    font-size: 1rem;
-    font-weight: 700;
-    color: black;
-    line-height: 1.3rem;
-    margin-right: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: black;
+  line-height: 1.3rem;
+  margin-right: 1rem;
 }
 
 .menu-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0.5rem 0;
-    font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  font-size: 0.8rem;
 }
 
-.menu-item>* {
-    margin: 0 0.1rem;
-    font-size: 0.8rem;
+.menu-item > * {
+  margin: 0 0.1rem;
+  font-size: 0.8rem;
 }
 
 .menuItemName {
-    width: 7rem;
+  width: 7rem;
 }
 
 .menuItemPrice {
-    width: 2rem;
+  width: 2rem;
 }
 
 .menuItemRating {
-    width: 2rem;
-    text-align: center;
+  width: 2rem;
+  text-align: center;
 }
 
-.modalContainer{
-    z-index: 100;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 2rem;
-    min-width: 40rem;
-    border-radius: 0.5rem;
-    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.20);
+.modalContainer {
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2rem;
+  min-width: 40rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.2);
 }
 
-.modalTitle{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    padding: 1rem;
+.modalTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 1rem;
 }
 
-.addMenuLine{
-    display: flex;
-    align-items: center;
-    margin: 1rem 0;
+.addMenuLine {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
 }
 
-.addMenuContainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 1rem 0;
+.addMenuContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem 0;
 }
-.addMenuContainer>*{
-    width: 100%;
+.addMenuContainer > * {
+  width: 100%;
 }
