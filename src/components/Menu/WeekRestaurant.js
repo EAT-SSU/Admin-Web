@@ -4,6 +4,7 @@ import { styled } from "@mui/material/styles";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import Board from "./Board";
 import AddMealModal from "./AddMealModal";
+import styles from "./WeekRestaurant.module.css";
 
 function WeekRestaurant({
   menuType,
@@ -54,12 +55,12 @@ function WeekRestaurant({
       </div>
     );
   }
-
+  // 주간 메뉴 요일마다 보여주는 코드 창?
   return (
     <div className="restaurantBoardContainer">
       <div className="addButtonConatiner">
         <AddMenuButton onClick={() => setIsModalOpen(true)}>
-          식단 추가하기
+          추가하기
           <ArrowForwardIosRoundedIcon
             sx={{
               paddingBottom: "0.15rem",
@@ -68,7 +69,7 @@ function WeekRestaurant({
           />
         </AddMenuButton>
       </div>
-      <div className="boardContainer" id="scrollBar">
+      <div className={styles.board} id="scrollBar">
         <Board
           menuType={menuType}
           sections={boardData.sections}

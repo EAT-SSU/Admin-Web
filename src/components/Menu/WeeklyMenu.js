@@ -36,7 +36,6 @@ function WeeklyMenu() {
       <RestaurantPartSelector
         selectedTimePart={selectedTimePart}
         setSelectedTimePart={setSelectedTimePart}
-        hidden={selectedMenuType === "fix-menu"}
       >
         <WeeklyMeal date={selectedDate} timePart={selectedTimePart} />
       </RestaurantPartSelector>
